@@ -6,7 +6,7 @@ import os
 # Constants
 DATA_FILE = 'highscore.txt'
 INITIAL_SPEED = 120  # milliseconds
-SPEED_INCREMENT = 5  # ms faster per food
+SPEED_INCREMENT = 10  # i'm fast as frick boyyyyy
 
 def load_highscore():
     if not os.path.exists(DATA_FILE):
@@ -22,7 +22,7 @@ def save_highscore(score):
         f.write(str(score))
 
 def main(stdscr):
-    curses.curs_set(0)              # Hide cursor
+    curses.curs_set(0)              # Hide cursor 
     curses.start_color()
     curses.init_pair(1, curses.COLOR_GREEN, curses.COLOR_BLACK)
     curses.init_pair(2, curses.COLOR_RED, curses.COLOR_BLACK)
@@ -53,7 +53,7 @@ def main(stdscr):
     paused = False
 
     while True:
-        # Display score & highscore
+        # Pontuação e placar
         stdscr.addstr(0, 2, f" Score: {score} ")
         stdscr.addstr(0, sw//2 - 7, f" High Score: {highscore} ")
         stdscr.addstr(0, sw-15, " P = Pause ")
